@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stephen Gorgone — Secondary Science Teacher</title>
+<meta name="description" content="Veteran secondary science teacher with 12 years of experience in biology, human anatomy & physiology, earth science, and environmental science. Based in Seattle, Washington.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1B2419;
+    --ink-soft: #2A332A;
+    --paper: #F7F3EA;
+    --paper-deep: #EDE7D6;
+    --paper-warm: #F0E9D8;
+    --forest: #2D4A2D;
+    --forest-deep: #1F3522;
+    --moss: #5A7458;
+    --copper: #B25E32;
+    --copper-soft: #C97B52;
+    --rule: rgba(27, 36, 25, 0.14);
+    --rule-soft: rgba(27, 36, 25, 0.07);
+
+    --serif: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+    --sans: 'Manrope', system-ui, sans-serif;
+
+    --max: 1240px;
+    --gutter: clamp(1.25rem, 4vw, 3rem);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    font-size: clamp(1rem, 0.95rem + 0.2vw, 1.0625rem);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    /* very faint paper noise */
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(178, 94, 50, 0.04) 0%, transparent 35%),
+      radial-gradient(circle at 88% 75%, rgba(45, 74, 45, 0.05) 0%, transparent 40%);
+    background-attachment: fixed;
+  }
+
+  /* SVG topographic background, very subtle */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.035;
+    z-index: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='800' viewBox='0 0 800 800'><g fill='none' stroke='%231B2419' stroke-width='1'><path d='M0,400 Q200,300 400,400 T800,400'/><path d='M0,420 Q200,330 400,420 T800,420'/><path d='M0,440 Q200,360 400,440 T800,440'/><path d='M0,460 Q200,390 400,460 T800,460'/><path d='M0,380 Q200,270 400,380 T800,380'/><path d='M0,360 Q200,240 400,360 T800,360'/><path d='M0,340 Q200,210 400,340 T800,340'/><path d='M0,320 Q200,180 400,320 T800,320'/><path d='M0,480 Q200,420 400,480 T800,480'/><path d='M0,500 Q200,450 400,500 T800,500'/><path d='M0,520 Q200,480 400,520 T800,520'/></g></svg>");
+    background-size: 600px 600px;
+  }
+
+  main { position: relative; z-index: 1; }
+
+  /* === Typography === */
+  h1, h2, h3, h4 {
+    font-family: var(--serif);
+    color: var(--ink);
+    line-height: 1.05;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    font-variation-settings: "SOFT" 30, "WONK" 0;
+  }
+
+  .display {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-variation-settings: "SOFT" 50, "WONK" 1, "opsz" 144;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+  }
+
+  .eyebrow {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--copper);
+  }
+
+  .section-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--moss);
+    font-size: 0.95rem;
+  }
+
+  em, .italic {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* === Layout === */
+  .wrap {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+  }
+
+  section {
+    padding: clamp(4rem, 9vw, 7rem) 0;
+    border-top: 1px solid var(--rule);
+    position: relative;
+  }
+
+  section:first-of-type { border-top: none; }
+
+  .section-head {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: clamp(1rem, 3vw, 2rem);
+    margin-bottom: clamp(2rem, 5vw, 3.5rem);
+    align-items: baseline;
+  }
+
+  .section-head h2 {
+    font-size: clamp(1.85rem, 3.5vw, 2.85rem);
+    font-weight: 300;
+  }
+
+  /* === Nav === */
+  nav.top {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(247, 243, 234, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+  }
+  nav.top .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  nav.top .mark {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.15rem;
+    color: var(--ink);
+  }
+  nav.top .mark span { color: var(--copper); }
+  nav.top ul {
+    list-style: none;
+    display: flex;
+    gap: clamp(1rem, 2.5vw, 2rem);
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  nav.top ul a {
+    color: var(--ink-soft);
+    transition: color 0.2s;
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+  }
+  nav.top ul a:hover {
+    color: var(--copper);
+    border-bottom-color: var(--copper);
+  }
+  @media (max-width: 640px) {
+    nav.top ul li:not(:last-child) { display: none; }
+  }
+
+  /* === Hero === */
+  .hero {
+    padding-top: clamp(4rem, 10vw, 7rem);
+    padding-bottom: clamp(4rem, 10vw, 7rem);
+    border-top: none;
+    position: relative;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+  .hero-meta .dot {
+    width: 8px;
+    height: 8px;
+    background: var(--copper);
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .hero-meta .loc {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  .hero-meta .loc em {
+    color: var(--moss);
+    font-style: italic;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.5rem, 11vw, 8.5rem);
+    font-weight: 300;
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+    font-variation-settings: "SOFT" 60, "WONK" 1, "opsz" 144;
+  }
+  .hero h1 .last {
+    font-style: italic;
+    color: var(--forest);
+    display: inline-block;
+  }
+
+  .hero-lede {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+  @media (min-width: 800px) {
+    .hero-lede { grid-template-columns: 1.7fr 1fr; }
+  }
+
+  .hero-lede .hero-role {
+    font-family: var(--serif);
+    font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink-soft);
+    line-height: 1.3;
+  }
+
+  .hero-lede .subjects {
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--moss);
+    line-height: 2;
+    border-left: 1px solid var(--rule);
+    padding-left: 1.5rem;
+  }
+  .hero-lede .subjects div + div { margin-top: 0.15rem; }
+  .hero-lede .subjects .pip {
+    color: var(--copper);
+    margin-right: 0.5rem;
+  }
+
+  .hero-rule {
+    margin-top: clamp(3rem, 7vw, 5rem);
+    height: 1px;
+    background: var(--rule);
+    position: relative;
+  }
+  .hero-rule::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -3px;
+    width: 60px;
+    height: 7px;
+    background: var(--copper);
+  }
+
+  /* decorative leaf SVG, top right */
+  .hero-leaf {
+    position: absolute;
+    top: 2rem;
+    right: var(--gutter);
+    width: clamp(80px, 14vw, 160px);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  @media (max-width: 700px) {
+    .hero-leaf { top: 1rem; width: 70px; opacity: 0.4; }
+  }
+
+  /* === About === */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+  @media (min-width: 800px) {
+    .about-grid { grid-template-columns: 1fr 1.2fr; }
+  }
+
+  .about-pull {
+    font-family: var(--serif);
+    font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--forest);
+    line-height: 1.3;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--copper);
+  }
+  .about-pull::before {
+    content: '"';
+    font-size: 1.5em;
+    color: var(--copper);
+    line-height: 0;
+    vertical-align: -0.2em;
+    margin-right: 0.1em;
+  }
+  .about-pull::after {
+    content: '"';
+    font-size: 1.5em;
+    color: var(--copper);
+    line-height: 0;
+    vertical-align: -0.2em;
+    margin-left: 0.05em;
+  }
+
+  .about-prose p {
+    margin-bottom: 1.25rem;
+    max-width: 56ch;
+  }
+  .about-prose p:last-child { margin-bottom: 0; }
+
+  /* === Subjects === */
+  .subjects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+  @media (min-width: 700px) {
+    .subjects-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1000px) {
+    .subjects-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .subject {
+    background: var(--paper);
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    position: relative;
+    transition: background 0.3s;
+  }
+  .subject:hover { background: var(--paper-warm); }
+
+  .subject .code {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--copper);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.02em;
+  }
+  .subject h3 {
+    font-size: clamp(1.3rem, 1.8vw, 1.55rem);
+    margin-bottom: 0.75rem;
+    font-weight: 400;
+    font-variation-settings: "SOFT" 30;
+  }
+  .subject p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+
+  /* === Experience timeline === */
+  .timeline { display: flex; flex-direction: column; gap: clamp(2rem, 4vw, 3rem); }
+
+  .role {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding-bottom: clamp(2rem, 4vw, 3rem);
+    border-bottom: 1px solid var(--rule);
+  }
+  .role:last-child { border-bottom: none; padding-bottom: 0; }
+  @media (min-width: 720px) {
+    .role { grid-template-columns: 200px 1fr; gap: clamp(1.5rem, 4vw, 3rem); }
+  }
+
+  .role .when {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--moss);
+    padding-top: 0.35rem;
+  }
+  .role .what h3 {
+    font-size: clamp(1.3rem, 2vw, 1.6rem);
+    margin-bottom: 0.35rem;
+    font-weight: 400;
+  }
+  .role .what .where {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+  .role .what p {
+    color: var(--ink-soft);
+    max-width: 60ch;
+    margin-bottom: 0.75rem;
+  }
+  .role .what p:last-child { margin-bottom: 0; }
+  .role .what .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  .role .what .tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--forest);
+    background: var(--paper-deep);
+    padding: 0.3rem 0.65rem;
+    border-radius: 2px;
+    font-weight: 600;
+  }
+
+  /* === Stat strip === */
+  .stats {
+    background: var(--forest-deep);
+    color: var(--paper);
+    padding: clamp(3rem, 6vw, 5rem) 0;
+    border: none;
+    position: relative;
+    overflow: hidden;
+  }
+  .stats::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><circle cx='50' cy='50' r='1' fill='%23F7F3EA' opacity='0.4'/></svg>");
+    background-size: 40px 40px;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  .stats .wrap { position: relative; }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+  }
+  @media (min-width: 700px) {
+    .stats-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+  .stat .n {
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 300;
+    color: var(--paper);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    font-variation-settings: "SOFT" 50, "opsz" 144;
+  }
+  .stat .n .unit {
+    font-size: 0.5em;
+    font-style: italic;
+    color: var(--copper-soft);
+    margin-left: 0.1em;
+  }
+  .stat .label {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(247, 243, 234, 0.65);
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  /* === Credentials === */
+  .creds-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  @media (min-width: 800px) {
+    .creds-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  .cred {
+    border-top: 1px solid var(--ink);
+    padding-top: 1.25rem;
+  }
+  .cred .kicker {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--copper);
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+  .cred h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+  }
+  .cred p {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+  .cred .meta {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    color: var(--moss);
+  }
+
+  /* === Approach blocks === */
+  .approach-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(1rem, 2.5vw, 1.75rem);
+    margin-top: 2rem;
+  }
+  @media (min-width: 700px) {
+    .approach-list { grid-template-columns: repeat(2, 1fr); }
+  }
+  .approach {
+    padding: 1.5rem;
+    background: var(--paper-deep);
+    border-radius: 2px;
+    position: relative;
+  }
+  .approach .pin {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--copper);
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+  .approach h4 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  .approach p {
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  /* === Contact === */
+  .contact {
+    background: var(--paper-deep);
+    border-top: 1px solid var(--rule);
+  }
+  .contact .wrap {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: end;
+  }
+  @media (min-width: 800px) {
+    .contact .wrap { grid-template-columns: 1.5fr 1fr; }
+  }
+  .contact h2 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1;
+    font-variation-settings: "SOFT" 50, "WONK" 1, "opsz" 144;
+    margin-bottom: 1rem;
+  }
+  .contact h2 em { color: var(--forest); }
+  .contact .lede {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--ink-soft);
+    max-width: 40ch;
+  }
+  .contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    font-size: 1rem;
+  }
+  .contact-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    color: var(--ink);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 0.65rem;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .contact-links a:hover {
+    color: var(--copper);
+    border-bottom-color: var(--copper);
+  }
+  .contact-links a .label {
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--moss);
+    font-weight: 600;
+    width: 70px;
+    flex-shrink: 0;
+  }
+
+  /* === Footer === */
+  footer {
+    padding: 2rem 0;
+    border-top: 1px solid var(--rule);
+    background: var(--paper);
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+  }
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  footer .mark {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--moss);
+  }
+
+  /* === Portfolio === */
+  .portfolio-intro {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1.15rem, 1.7vw, 1.4rem);
+    color: var(--forest);
+    line-height: 1.45;
+    max-width: 50ch;
+    margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 300;
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+  @media (min-width: 800px) {
+    .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .lesson {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: clamp(1.5rem, 3vw, 2rem);
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    position: relative;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .lesson:hover {
+    border-color: var(--copper);
+    transform: translateY(-2px);
+  }
+
+  .lesson-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding-bottom: 0.85rem;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .lesson-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--moss);
+    font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  .lesson-course {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--copper);
+    font-weight: 600;
+    text-align: right;
+  }
+  .lesson h3 {
+    font-size: clamp(1.25rem, 1.7vw, 1.45rem);
+    font-weight: 400;
+    line-height: 1.2;
+    font-variation-settings: "SOFT" 30;
+  }
+  .lesson .summary {
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  .ngss-block {
+    margin-top: 0.25rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--rule-soft);
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+  .ngss-row {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 0.85rem;
+    align-items: baseline;
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+  .ngss-label {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--copper);
+    font-size: 0.78rem;
+    text-align: right;
+  }
+  .ngss-value {
+    color: var(--ink-soft);
+  }
+  .ngss-value .pe {
+    font-family: var(--sans);
+    font-weight: 600;
+    color: var(--forest-deep);
+  }
+
+  /* === Reveal animation === */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+  }
+  .reveal.d1 { animation-delay: 0.05s; }
+  .reveal.d2 { animation-delay: 0.18s; }
+  .reveal.d3 { animation-delay: 0.32s; }
+  .reveal.d4 { animation-delay: 0.46s; }
+  @keyframes rise {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { animation: none; opacity: 1; transform: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <a href="#top" class="mark">Stephen Gorgone<span> · </span><em>M.A.</em></a>
+    <ul>
+      <li><a href="#approach">Approach</a></li>
+      <li><a href="#subjects">Subjects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#credentials">Credentials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <svg class="hero-leaf" viewBox="0 0 120 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M60 10 Q 30 50 25 100 Q 22 140 60 190 Q 98 140 95 100 Q 90 50 60 10 Z" stroke="#2D4A2D" stroke-width="1" fill="none" opacity="0.6"/>
+      <path d="M60 10 L 60 190" stroke="#2D4A2D" stroke-width="0.8" opacity="0.5"/>
+      <path d="M60 40 Q 45 50 35 70" stroke="#2D4A2D" stroke-width="0.6" opacity="0.4" fill="none"/>
+      <path d="M60 40 Q 75 50 85 70" stroke="#2D4A2D" stroke-width="0.6" opacity="0.4" fill="none"/>
+      <path d="M60 70 Q 40 80 28 105" stroke="#2D4A2D" stroke-width="0.6" opacity="0.4" fill="none"/>
+      <path d="M60 70 Q 80 80 92 105" stroke="#2D4A2D" stroke-width="0.6" opacity="0.4" fill="none"/>
+      <path d="M60 105 Q 38 115 28 145" stroke="#2D4A2D" stroke-width="0.6" opacity="0.4" fill="none"/>
+      <path d="M60 105 Q 82 115 92 145" stroke="#2D4A2D" stroke-width="0.6" opacity="0.4" fill="none"/>
+      <path d="M60 140 Q 45 150 38 170" stroke="#2D4A2D" stroke-width="0.6" opacity="0.4" fill="none"/>
+      <path d="M60 140 Q 75 150 82 170" stroke="#2D4A2D" stroke-width="0.6" opacity="0.4" fill="none"/>
+    </svg>
+
+    <div class="wrap">
+      <div class="hero-meta reveal d1">
+        <span class="dot"></span>
+        <span class="loc">Seattle, Washington · <em>available 2026–27</em></span>
+      </div>
+      <h1 class="display reveal d2">
+        Stephen<br>
+        <span class="last">Gorgone.</span>
+      </h1>
+      <div class="hero-lede">
+        <p class="hero-role reveal d3">
+          Secondary science teacher with twelve years in the classroom — and a deep commitment to inquiry, equity, and the wonder of how the natural world works.
+        </p>
+        <div class="subjects reveal d4">
+          <div><span class="pip">◦</span>Biology</div>
+          <div><span class="pip">◦</span>Human Anatomy &amp; Physiology</div>
+          <div><span class="pip">◦</span>Earth Science</div>
+          <div><span class="pip">◦</span>Environmental Science</div>
+          <div><span class="pip">◦</span>General Science</div>
+        </div>
+      </div>
+      <div class="hero-rule"></div>
+    </div>
+  </section>
+
+  <!-- Approach / About -->
+  <section id="approach">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">§ 01</span>
+        <h2><em>Approach.</em></h2>
+      </div>
+      <div class="about-grid">
+        <p class="about-pull">
+          Students learn science best when they are asking the questions — and trusted to follow them somewhere real.
+        </p>
+        <div class="about-prose">
+          <p>For twelve years I have taught science to students in diverse Title&nbsp;I high schools, working to create positive, inquiry-based learning environments that incorporate the Next Generation Science Standards across biology, human anatomy &amp; physiology, earth science, and environmental science. My classroom is calm and structured by design, with clear routines that make the science itself the most interesting thing in the room.</p>
+          <p>I work to make rigorous science genuinely accessible to every student, including English language learners and students with IEPs and 504 plans, through scaffolded investigations, multimodal representations, and close collaboration with special-education staff and families. Praised by colleagues and administration for strong classroom management and a collaborative approach to curriculum work, I treat differentiation not as a separate workflow but as the texture of every lesson.</p>
+          <p>As an early adopter of AI in education, I help students use these tools thoughtfully and ethically, as a sharpener of their own thinking rather than a substitute for it. As a former science department chair, I have led an 18-person team, authored district benchmark assessments in earth science, and mentored colleagues new to the profession.</p>
+        </div>
+      </div>
+
+      <div class="approach-list">
+        <div class="approach">
+          <div class="pin">i.</div>
+          <h4>Inquiry &amp; phenomena first</h4>
+          <p>Every unit begins with a phenomenon students can observe, argue about, and explain — then the content follows the questions they raise.</p>
+        </div>
+        <div class="approach">
+          <div class="pin">ii.</div>
+          <h4>Classroom management as care</h4>
+          <p>Structured routines, predictable expectations, and warm authority create the conditions for students to take intellectual risks safely.</p>
+        </div>
+        <div class="approach">
+          <div class="pin">iii.</div>
+          <h4>Equity in the design, not the patch</h4>
+          <p>Lessons are built from the start to work for ELL, IEP, and 504 students — supports are structural, not retrofitted.</p>
+        </div>
+        <div class="approach">
+          <div class="pin">iv.</div>
+          <h4>AI as a thinking partner</h4>
+          <p>Students learn to use AI to strengthen their reasoning, check their work, and surface their own questions — never as a shortcut around the thinking itself.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats strip -->
+  <section class="stats">
+    <div class="wrap">
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="n">12<span class="unit">yrs</span></div>
+          <div class="label">Classroom Experience<br>Secondary Science</div>
+        </div>
+        <div class="stat">
+          <div class="n">90<span class="unit">%</span></div>
+          <div class="label">School-Wide Graduation<br>Most Recent 2 Years</div>
+        </div>
+        <div class="stat">
+          <div class="n">5</div>
+          <div class="label">Science Courses<br>Taught at Depth</div>
+        </div>
+        <div class="stat">
+          <div class="n">18</div>
+          <div class="label">Faculty Mentored<br>As Department Chair</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subjects -->
+  <section id="subjects">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">§ 02</span>
+        <h2><em>Subjects taught.</em></h2>
+      </div>
+
+      <div class="subjects-grid">
+        <div class="subject">
+          <div class="code">— bio</div>
+          <h3>Biology</h3>
+          <p>Cells, genetics, evolution, and ecology — anchored in lab investigation, real data, and the living world students can observe firsthand.</p>
+        </div>
+        <div class="subject">
+          <div class="code">— h.a.p.</div>
+          <h3>Human Anatomy &amp; Physiology</h3>
+          <p>Systems-level study of the human body, with dissection, case-study reasoning, and a steady focus on how structure follows function.</p>
+        </div>
+        <div class="subject">
+          <div class="code">— earth</div>
+          <h3>Earth Science</h3>
+          <p>Plate tectonics, atmosphere, hydrosphere, and deep time — taught with the modeling and analysis practices at the heart of NGSS.</p>
+        </div>
+        <div class="subject">
+          <div class="code">— env</div>
+          <h3>Environmental Science</h3>
+          <p>Ecosystems, energy, sustainability, and human impact — bridging earth and life science to help students reason about the world they will inherit.</p>
+        </div>
+        <div class="subject">
+          <div class="code">— gen</div>
+          <h3>General Science</h3>
+          <p>Integrated secondary science with an emphasis on scientific practices: observation, modeling, evidence, and argumentation across domains.</p>
+        </div>
+        <div class="subject" style="background: var(--paper-warm);">
+          <div class="code">— note</div>
+          <h3 style="font-style: italic; color: var(--forest);">Multi-prep ready</h3>
+          <p>Five distinct course preps across earth and life sciences — flexible coverage that supports a school's scheduling and staffing needs without sacrificing depth.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">§ 03</span>
+        <h2><em>Experience.</em></h2>
+      </div>
+
+      <div class="timeline">
+        <div class="role">
+          <div class="when">Aug 2015 — Aug 2025</div>
+          <div class="what">
+            <h3>Science Teacher</h3>
+            <div class="where">Santa Ana High School · SAUSD</div>
+            <p>Designed and delivered inquiry-based, NGSS-aligned instruction across four distinct science courses — Human Anatomy &amp; Physiology, Biology, Earth Science, and Environmental Science — for a large, diverse Title&nbsp;I student population.</p>
+            <p>Contributed to a school-wide graduation rate of 90% over the most recent two years. Built inclusive learning environments through close collaboration with special-education staff, integrating supports for English learners and students with IEPs and 504 plans into the structure of every lesson.</p>
+            <p>An early adopter of AI in education: integrated tools like ChatGPT and Claude into differentiation, formative assessment, and feedback workflows — while coaching students on responsible, critical use.</p>
+            <div class="tags">
+              <span class="tag">NGSS</span>
+              <span class="tag">Lab-Based Instruction</span>
+              <span class="tag">ELL &amp; IEP/504</span>
+              <span class="tag">AI Integration</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="role">
+          <div class="when">2022 — 2024</div>
+          <div class="what">
+            <h3>Science Department Chair</h3>
+            <div class="where">Santa Ana High School</div>
+            <p>Led an 18-member science department, managing the departmental budget and aligning resources with instructional priorities. Mentored faculty, advocated for targeted professional development, and led cross-departmental collaboration to establish academic benchmarks and align curriculum across the school.</p>
+            <div class="tags">
+              <span class="tag">Department Leadership</span>
+              <span class="tag">Curriculum Alignment</span>
+              <span class="tag">Faculty Mentoring</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="role">
+          <div class="when">2013 — 2025</div>
+          <div class="what">
+            <h3>District Benchmark Assessment Author <span class="italic" style="color: var(--moss); font-size: 0.8em;">— Earth Science</span></h3>
+            <div class="where">Santa Ana Unified School District</div>
+            <p>Authored district-wide benchmark assessments in Earth Science, contributing to curriculum alignment and common assessment practices across multiple schools. Served on the Principal Advisory Committee, the District Grading Task Force, and the Technology Committee.</p>
+          </div>
+        </div>
+
+        <div class="role">
+          <div class="when">Aug 2013 — Aug 2015</div>
+          <div class="what">
+            <h3>Science Teacher</h3>
+            <div class="where">Godinez Fundamental High School · SAUSD</div>
+            <p>Taught Earth Science and Biology with NGSS-aligned, inquiry-based instruction. Established the classroom management routines and collaborative instructional practices that have anchored my teaching ever since.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">§ 04</span>
+        <h2><em>Teaching portfolio.</em></h2>
+      </div>
+
+      <p class="portfolio-intro">
+        A few signature lessons that show how I teach — multi-day, firsthand, and built around students producing tangible scientific work, not just consuming content.
+      </p>
+
+      <div class="portfolio-grid">
+
+        <article class="lesson">
+          <div class="lesson-header">
+            <span class="lesson-num">i.</span>
+            <span class="lesson-course">Human Anatomy &amp; Physiology</span>
+          </div>
+          <h3>Comparative Rat Dissection</h3>
+          <p class="summary">
+            A multi-day investigative lab in which students dissected preserved specimens to expose and study five organ systems — respiratory, digestive, circulatory, urogenital, and structural — then completed a structure-and-function analysis comparing rat anatomy to human physiology. Students compared male and female reproductive anatomy across specimens and produced a formal lab report.
+          </p>
+          <div class="ngss-block">
+            <div class="ngss-row">
+              <span class="ngss-label">PEs</span>
+              <span class="ngss-value"><span class="pe">HS-LS1-2</span> · <span class="pe">HS-LS1-3</span> · <span class="pe">HS-LS4-1</span></span>
+            </div>
+            <div class="ngss-row">
+              <span class="ngss-label">SEPs</span>
+              <span class="ngss-value">Developing &amp; using models · Constructing explanations · Communicating information</span>
+            </div>
+            <div class="ngss-row">
+              <span class="ngss-label">CCCs</span>
+              <span class="ngss-value">Structure &amp; function · Systems &amp; system models · Patterns</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="lesson">
+          <div class="lesson-header">
+            <span class="lesson-num">ii.</span>
+            <span class="lesson-course">Human Anatomy &amp; Physiology</span>
+          </div>
+          <h3>Histology Microscopy &amp; Research Project</h3>
+          <p class="summary">
+            A multi-week independent research project using high-power microscopy. Students observed and sketched nine distinct tissue types from prepared slides — with teacher-verified specimen identification before sketching — and built a comparative structure-function-location reference for each using primary textual research, synthesized into a formal multi-section presentation and evidence-based written conclusion.
+          </p>
+          <div class="ngss-block">
+            <div class="ngss-row">
+              <span class="ngss-label">PEs</span>
+              <span class="ngss-value"><span class="pe">HS-LS1-1</span> · <span class="pe">HS-LS1-2</span></span>
+            </div>
+            <div class="ngss-row">
+              <span class="ngss-label">SEPs</span>
+              <span class="ngss-value">Obtaining &amp; evaluating information · Developing &amp; using models · Constructing explanations</span>
+            </div>
+            <div class="ngss-row">
+              <span class="ngss-label">CCCs</span>
+              <span class="ngss-value">Structure &amp; function · Patterns · Scale, proportion &amp; quantity</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="lesson">
+          <div class="lesson-header">
+            <span class="lesson-num">iii.</span>
+            <span class="lesson-course">Biology</span>
+          </div>
+          <h3>Genetic Inheritance Lab: "Baby Face"</h3>
+          <p class="summary">
+            A multi-day investigative lab in which student partners simulated meiotic gamete formation through coin flips to model the inheritance of 23 traits in a hypothetical offspring, then synthesized their results into a drawn phenotypic portrait and a written post-lab analysis. The lab deliberately incorporated three distinct inheritance patterns — simple Mendelian dominance, incomplete dominance, and polygenic inheritance — and asked students to reason about probability and the limits of phenotypic inference.
+          </p>
+          <div class="ngss-block">
+            <div class="ngss-row">
+              <span class="ngss-label">PEs</span>
+              <span class="ngss-value"><span class="pe">HS-LS3-1</span> · <span class="pe">HS-LS3-2</span> · <span class="pe">HS-LS3-3</span></span>
+            </div>
+            <div class="ngss-row">
+              <span class="ngss-label">SEPs</span>
+              <span class="ngss-value">Developing &amp; using models · Using mathematics &amp; computational thinking · Engaging in argument from evidence</span>
+            </div>
+            <div class="ngss-row">
+              <span class="ngss-label">CCCs</span>
+              <span class="ngss-value">Cause &amp; effect · Patterns · Scale, proportion &amp; quantity · Systems &amp; system models</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="lesson">
+          <div class="lesson-header">
+            <span class="lesson-num">iv.</span>
+            <span class="lesson-course">Environmental Science · Cross-disciplinary</span>
+          </div>
+          <h3>Biome Research Project</h3>
+          <p class="summary">
+            A multi-week role-based research project in which students investigated a single biome through six distinct scientific lenses — geographer, climatologist or oceanographer, botanist, zoologist, conservation biologist, and ecotourism guide — modeling how environmental science is conducted as an inherently interdisciplinary practice. Explicitly engaged biodiversity, organism-environment adaptations, climate change impacts, and real-world conservation strategy.
+          </p>
+          <div class="ngss-block">
+            <div class="ngss-row">
+              <span class="ngss-label">PEs</span>
+              <span class="ngss-value"><span class="pe">HS-LS2-2</span> · <span class="pe">HS-LS2-6</span> · <span class="pe">HS-LS2-7</span> · <span class="pe">HS-LS4-5</span> · <span class="pe">HS-ESS3-1</span> · <span class="pe">HS-ESS3-6</span></span>
+            </div>
+            <div class="ngss-row">
+              <span class="ngss-label">SEPs</span>
+              <span class="ngss-value">Obtaining &amp; evaluating information · Constructing explanations · Engaging in argument from evidence · Asking questions &amp; defining problems</span>
+            </div>
+            <div class="ngss-row">
+              <span class="ngss-label">CCCs</span>
+              <span class="ngss-value">Systems &amp; system models · Stability &amp; change · Cause &amp; effect · Structure &amp; function · Patterns</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Credentials -->
+  <section id="credentials">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num">§ 05</span>
+        <h2><em>Credentials &amp; development.</em></h2>
+      </div>
+
+      <div class="creds-grid">
+        <div class="cred">
+          <div class="kicker">— certification</div>
+          <h3>Washington State Teacher Certification</h3>
+          <p>Application submitted to OSPI on May 15, 2026 under the new-resident pathway. Anticipated endorsement areas: Biology and Earth &amp; Space Science.</p>
+          <span class="meta">Status: in process</span>
+        </div>
+
+        <div class="cred">
+          <div class="kicker">— credential</div>
+          <h3>California Single Subject Teaching Credentials</h3>
+          <p>Dual credentials in Biological Sciences and Geosciences — equivalent to the Washington Biology and Earth &amp; Space Science endorsements. English Learner (ELL) Authorization.</p>
+        </div>
+
+        <div class="cred">
+          <div class="kicker">— graduate</div>
+          <h3>Master of Arts in Teaching</h3>
+          <p>University of California, Irvine (2013). Mary Roosevelt Honor Scholar in Teaching and Learning.</p>
+        </div>
+
+        <div class="cred">
+          <div class="kicker">— undergraduate</div>
+          <h3>Bachelor of Science in Biopsychology</h3>
+          <p>University of California, Santa Barbara (2001).</p>
+        </div>
+
+        <div class="cred">
+          <div class="kicker">— professional development</div>
+          <h3>California Science Project — UC Irvine</h3>
+          <p>Completed Tier&nbsp;1 and Tier&nbsp;2 professional development training in NGSS-aligned, inquiry-based science instruction.</p>
+        </div>
+
+        <div class="cred">
+          <div class="kicker">— professional development</div>
+          <h3>Claude 101 — Anthropic Academy</h3>
+          <p>Foundational training (2026) in effective and responsible use of Claude for instructional design, differentiation, and classroom workflows.</p>
+        </div>
+
+        <div class="cred">
+          <div class="kicker">— professional development</div>
+          <h3>Certified Transformational Coach</h3>
+          <p>Being True to You (2025). Coaching and mentoring skills that support student social-emotional growth, goal-setting, and self-advocacy.</p>
+        </div>
+
+        <div class="cred">
+          <div class="kicker">— seattle community</div>
+          <h3>Village Seattle (VillageCo)</h3>
+          <p>Member since March 2026; currently in the VillageCo Lead cohort, training to build and co-lead a Seattle-based community group focused on connection and personal growth.</p>
+        </div>
+
+        <div class="cred">
+          <div class="kicker">— seattle community</div>
+          <h3>Intentional Society</h3>
+          <p>New member of a Seattle-area community organization focused on intentional living and personal development.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">Get in touch</span>
+        <h2 style="margin-top: 1rem;">Let's<br><em>talk science.</em></h2>
+        <p class="lede">Open to secondary science teaching positions across Seattle Public Schools and the greater Seattle area for the 2026–27 school year.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:sgorgonesci@gmail.com">
+          <span class="label">Email</span>
+          <span>sgorgonesci@gmail.com</span>
+        </a>
+        <a href="#">
+          <span class="label">Location</span>
+          <span>Seattle, Washington</span>
+        </a>
+        <a href="mailto:sgorgonesci@gmail.com?subject=Resume%20request">
+          <span class="label">Resume</span>
+          <span>Available on request</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Stephen Gorgone, M.A.</div>
+    <div class="mark"><em>Seattle, Washington</em></div>
+  </div>
+</footer>
+
+</body>
+</html>
